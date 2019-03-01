@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        const add7 = () => {
+            const result = document.getElementById('result');
+            const input = parseInt(document.getElementById("input").value);
+            result.innerHTML = input + 7;
+        }
+        const multiply = () => {
+            const result = document.getElementById('result');
+            const input = document.getElementById('input').value;
+            const nums = input.split(' ').map(e => parseInt(e));
+            result.innerHTML = nums[0] * nums[1];
+        }
+        const capitalize = () => {
+            const result = document.getElementById('result');
+            const input = document.getElementById('input').value.toLowerCase();
+            result.innerHTML = input[0].toUpperCase().concat(input.slice(1))
+        }
+        const lastLetter = () => {
+            const reuslt = document.getElementById('result');
+            const input = document.getElementById('input').value;
+            result.innerHTML = input[input.length-1];
+        }
+    </script>
+</head>
+<body>
+    <h1>Fundamentals 3</h1>
+        <input type="text" id="input" placeholder="Enter an integer for submission" style="width: 500px;"/>
+        <section>
+            <h3>
+                Write a function called add7 that takes one number and returns that number + 7.
+            </h3>
+            <button onclick="add7()">Run function</button>
+        </section>
+    <section>
+        <h3>
+            Write a function called multiply that takes 2 numbers and returns their product.
+        </h3>
+        <button onclick="multiply()">Run function</button>
+    </section>
+    <section>
+        <h3>
+            Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
+        </h3>
+        <button onclick="capitalize()">Run function</button>
+    </section>
+    <section>
+        <h3>
+            Write a function called lastLetter that takes a string and returns the very last letter of that string:
+        </h3>
+        <button onclick="lastLetter()">Run function</button>
+        <h4>
+            lastLetter("abcd") should return "d"
+        </h4>
+    </section>
+    <section>
+        <p>Result: <span id="result"></span></p>
+    </section>
+</body>
+</html>
